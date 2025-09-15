@@ -1,73 +1,165 @@
 <!DOCTYPE html>
-]
-},
-{
-title: "Major Contributions",
-content: `1. Turing Machine (1936): Theoretical device that defined what is computable.\n2. Codebreaking in WWII: Developed the Bombe machine to break Enigma codes.\n3. Turing Test (1950): Proposed a test to determine if machines could exhibit human-like intelligence.`,
-image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Enigma-Machine.jpg",
-resources: [
-{ label: "Turing Machine Explained", url: "https://www.youtube.com/watch?v=dNRDvLACg5Q" },
-{ label: "Bletchley Park History", url: "https://bletchleypark.org.uk/" }
-]
-},
-{
-title: "Contributions to AI",
-content: `Turing was among the first to ask if machines could think. He laid theoretical foundations for artificial intelligence, combining logic, reasoning, and computation. His vision of machines learning from experience anticipated modern machine learning.`,
-image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Turing_test_diagram.png",
-resources: [
-{ label: "What is the Turing Test?", url: "https://www.ibm.com/cloud/learn/turing-test" },
-{ label: "AI History Overview", url: "https://www.youtube.com/watch?v=3wLqsRLvV-c" }
-]
-},
-{
-title: "Modern Influence",
-content: `Turing’s legacy lives on in AI today. His theoretical framework underlies modern computation and machine learning. The Turing Test remains an influential concept in defining machine intelligence. From self-driving cars to conversational AI, his ideas shaped the field we see today.`,
-image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg",
-resources: [
-{ label: "Modern AI Applications", url: "https://www.youtube.com/watch?v=2ePf9rue1Ao" },
-{ label: "Alan Turing Institute", url: "https://www.turing.ac.uk/" }
-]
-}
-];
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Turing: A Pioneer of AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .presentation-container {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            height: 80vh;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            padding: 40px;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide.active {
+            display: flex;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .navigation button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .navigation button:hover {
+            background-color: #0056b3;
+        }
+        .resources {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .resources a {
+            display: block;
+            margin: 5px 0;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .resources a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
 
+<div class="presentation-container">
+    <div id="slide1" class="slide active">
+        <h1>Alan Turing: A Pioneer of AI</h1>
+        <p>A look at the life and legacy of a brilliant mind who shaped the world of modern computing and artificial intelligence.</p>
+        <img src="https://i.imgur.com/e2N8d3k.png" alt="Alan Turing portrait">
+        <div class="resources">
+            <a href="https://www.youtube.com/watch?v=JdwVZcLCtdM" target="_blank">🎬 Watch: Alan Turing: The Man Who Cracked the Enigma Code!</a>
+        </div>
+    </div>
+    <div id="slide2" class="slide">
+        <h2>Early Life & Education</h2>
+        <p>Alan Mathison Turing was born in London in **1912**. As a child, he showed an early interest in science and mathematics, often pursuing his own unique methods, which frustrated some of his teachers.</p>
+        <p>He attended King's College, Cambridge, where he graduated with distinction in mathematics and was later elected a fellow. He also had a passion for long-distance running, reportedly training at an almost Olympic level.</p>
+    </div>
+    <div id="slide3" class="slide">
+        <h2>Major Contributions to Computing</h2>
+        <h3>The Turing Machine</h3>
+        <p>In his 1936 paper, "On Computable Numbers," Turing introduced the **Turing machine**, a theoretical model of a universal computer. This abstract device laid the **foundational principles for the digital computers** we use today, demonstrating that a single machine could be programmed to solve any computable problem.</p>
+        <h3>WWII Codebreaking</h3>
+        <p>During World War II, Turing worked at Bletchley Park, the British codebreaking center. He was instrumental in deciphering messages encrypted by the German **Enigma machine**, a crucial effort that is widely credited with shortening the war and saving countless lives. His work led to the design of the "Bombe," a machine used to break Enigma ciphers.</p>
+    </div>
+    <div id="slide4" class="slide">
+        <h2>Pioneering Artificial Intelligence</h2>
+        <h3>The Turing Test</h3>
+        <p>In his landmark 1950 paper, "Computing Machinery and Intelligence," Turing explored the question, "Can machines think?". He proposed the **Turing Test** (or "imitation game") as a way to determine if a machine could exhibit intelligent behavior indistinguishable from a human.</p>
+        <p>He suggested that if a human interrogator, communicating via text, could not tell the difference between a machine's responses and a human's, the machine could be considered to be thinking.</p>
+        <div class="resources">
+            <a href="https://www.youtube.com/watch?v=sXx-PpEBR7k" target="_blank">🎬 Watch: What is the Turing Test? Explained</a>
+        </div>
+    </div>
+    <div id="slide5" class="slide">
+        <h2>Influence on Modern AI</h2>
+        <p>Turing's work is the theoretical basis for modern AI. His ideas on the **universal machine** underpin all of today's computing systems, while his behavioral approach to intelligence, as outlined in the Turing Test, remains a key concept in the field.</p>
+        <p>His early work also discussed the idea of a **"child machine"** that could learn from experience and training, a concept that foreshadowed the rise of modern **machine learning** and neural networks. His vision helped set the stage for the AI applications we see all around us today, from virtual assistants to self-driving cars.</p>
+    </div>
 
-let index = 0;
+    <div class="navigation">
+        <button id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+        <button id="nextBtn" onclick="changeSlide(1)">Next</button>
+    </div>
+</div>
 
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
 
-function renderSlide() {
-const slide = slides[index];
-document.getElementById("title").innerText = slide.title;
-document.getElementById("content").innerText = slide.content;
-document.getElementById("slide-image").src = slide.image;
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+        document.getElementById('prevBtn').disabled = (index === 0);
+        document.getElementById('nextBtn').disabled = (index === slides.length - 1);
+    }
 
+    function changeSlide(direction) {
+        currentSlide = currentSlide + direction;
+        if (currentSlide < 0) {
+            currentSlide = 0;
+        }
+        if (currentSlide >= slides.length) {
+            currentSlide = slides.length - 1;
+        }
+        showSlide(currentSlide);
+    }
 
-const resourcesDiv = document.getElementById("resources");
-resourcesDiv.innerHTML = "";
-slide.resources.forEach(res => {
-const a = document.createElement("a");
-a.href = res.url;
-a.target = "_blank";
-a.rel = "noopener noreferrer";
-a.innerText = res.label;
-a.className = "resource-btn";
-resourcesDiv.appendChild(a);
-});
-}
-
-
-function prevSlide() {
-index = (index - 1 + slides.length) % slides.length;
-renderSlide();
-}
-
-
-function nextSlide() {
-index = (index + 1) % slides.length;
-renderSlide();
-}
-
-
-renderSlide();
+    // Initial load
+    document.addEventListener('DOMContentLoaded', () => {
+        showSlide(currentSlide);
+    });
 </script>
+
 </body>
 </html>

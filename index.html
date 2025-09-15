@@ -1,79 +1,73 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { useState } from "react";
-
-const slides = [
-  {
-    title: "Early Life",
-    content: `Alan Mathison Turing was born on June 23, 1912, in London, England. From a young age, he showed an exceptional aptitude for mathematics and problem-solving. Despite struggles in classical subjects, he excelled in logic and science. He studied at King’s College, Cambridge, and later earned a Ph.D. in mathematics from Princeton University in 1938.`,
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-    resources: [
-      { label: "Biography Video", url: "https://www.youtube.com/watch?v=S23yie-779k" },
-      { label: "Turing Biography Article", url: "https://www.britannica.com/biography/Alan-Turing" }
-    ]
-  },
-  {
-    title: "Major Contributions",
-    content: `1. Turing Machine (1936): Theoretical device that defined what is computable.\n2. Codebreaking in WWII: Developed the Bombe machine to break Enigma codes.\n3. Turing Test (1950): Proposed a test to determine if machines could exhibit human-like intelligence.`,
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Enigma-Machine.jpg",
-    resources: [
-      { label: "Turing Machine Explained", url: "https://www.youtube.com/watch?v=dNRDvLACg5Q" },
-      { label: "Bletchley Park History", url: "https://bletchleypark.org.uk/" }
-    ]
-  },
-  {
-    title: "Contributions to AI",
-    content: `Turing was among the first to ask if machines could think. He laid theoretical foundations for artificial intelligence, combining logic, reasoning, and computation. His vision of machines learning from experience anticipated modern machine learning.`,
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Turing_test_diagram.png",
-    resources: [
-      { label: "What is the Turing Test?", url: "https://www.ibm.com/cloud/learn/turing-test" },
-      { label: "AI History Overview", url: "https://www.youtube.com/watch?v=3wLqsRLvV-c" }
-    ]
-  },
-  {
-    title: "Modern Influence",
-    content: `Turing’s legacy lives on in AI today. His theoretical framework underlies modern computation and machine learning. The Turing Test remains an influential concept in defining machine intelligence. From self-driving cars to conversational AI, his ideas shaped the field we see today.`,
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg",
-    resources: [
-      { label: "Modern AI Applications", url: "https://www.youtube.com/watch?v=2ePf9rue1Ao" },
-      { label: "Alan Turing Institute", url: "https://www.turing.ac.uk/" }
-    ]
-  }
+<!DOCTYPE html>
+]
+},
+{
+title: "Major Contributions",
+content: `1. Turing Machine (1936): Theoretical device that defined what is computable.\n2. Codebreaking in WWII: Developed the Bombe machine to break Enigma codes.\n3. Turing Test (1950): Proposed a test to determine if machines could exhibit human-like intelligence.`,
+image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Enigma-Machine.jpg",
+resources: [
+{ label: "Turing Machine Explained", url: "https://www.youtube.com/watch?v=dNRDvLACg5Q" },
+{ label: "Bletchley Park History", url: "https://bletchleypark.org.uk/" }
+]
+},
+{
+title: "Contributions to AI",
+content: `Turing was among the first to ask if machines could think. He laid theoretical foundations for artificial intelligence, combining logic, reasoning, and computation. His vision of machines learning from experience anticipated modern machine learning.`,
+image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Turing_test_diagram.png",
+resources: [
+{ label: "What is the Turing Test?", url: "https://www.ibm.com/cloud/learn/turing-test" },
+{ label: "AI History Overview", url: "https://www.youtube.com/watch?v=3wLqsRLvV-c" }
+]
+},
+{
+title: "Modern Influence",
+content: `Turing’s legacy lives on in AI today. His theoretical framework underlies modern computation and machine learning. The Turing Test remains an influential concept in defining machine intelligence. From self-driving cars to conversational AI, his ideas shaped the field we see today.`,
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg",
+resources: [
+{ label: "Modern AI Applications", url: "https://www.youtube.com/watch?v=2ePf9rue1Ao" },
+{ label: "Alan Turing Institute", url: "https://www.turing.ac.uk/" }
+]
+}
 ];
 
-export default function Presentation() {
-  const [index, setIndex] = useState(0);
-  const slide = slides[index];
 
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="w-full max-w-3xl"
-      >
-        <Card className="rounded-2xl shadow-lg p-4">
-          <CardContent>
-            <h1 className="text-2xl font-bold mb-4">{slide.title}</h1>
-            <img src={slide.image} alt={slide.title} className="w-full h-64 object-cover rounded-xl shadow mb-4" />
-            <p className="text-gray-700 whitespace-pre-line mb-4">{slide.content}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {slide.resources.map((res, i) => (
-                <Button key={i} asChild variant="outline">
-                  <a href={res.url} target="_blank" rel="noopener noreferrer">{res.label}</a>
-                </Button>
-              ))}
-            </div>
-            <div className="flex justify-between">
-              <Button onClick={() => setIndex((index - 1 + slides.length) % slides.length)}>Previous</Button>
-              <Button onClick={() => setIndex((index + 1) % slides.length)}>Next</Button>
-            </div>
-          </CardContent>
-        </Card>
-      </motion.div>
-    </div>
-  );
+let index = 0;
+
+
+function renderSlide() {
+const slide = slides[index];
+document.getElementById("title").innerText = slide.title;
+document.getElementById("content").innerText = slide.content;
+document.getElementById("slide-image").src = slide.image;
+
+
+const resourcesDiv = document.getElementById("resources");
+resourcesDiv.innerHTML = "";
+slide.resources.forEach(res => {
+const a = document.createElement("a");
+a.href = res.url;
+a.target = "_blank";
+a.rel = "noopener noreferrer";
+a.innerText = res.label;
+a.className = "resource-btn";
+resourcesDiv.appendChild(a);
+});
 }
+
+
+function prevSlide() {
+index = (index - 1 + slides.length) % slides.length;
+renderSlide();
+}
+
+
+function nextSlide() {
+index = (index + 1) % slides.length;
+renderSlide();
+}
+
+
+renderSlide();
+</script>
+</body>
+</html>

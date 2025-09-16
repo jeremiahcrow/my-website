@@ -1,67 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>George Boole</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background:#f4f4f4; display:flex; justify-content:center; align-items:center; height:100vh; }
-    .presentation-container { position:relative; width:80%; max-width:900px; height:80vh; background:#fff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.1); overflow:hidden; }
-    .slide { display:none; padding:40px; box-sizing:border-box; height:100%; width:100%; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
-    .slide.active { display:flex; }
-    h1,h2 { color:#333; }
-    p { color:#555; line-height:1.6; }
-    img { max-width:80%; height:auto; margin-top:20px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,.1); }
-    .navigation { position:absolute; bottom:20px; width:100%; text-align:center; }
-    .navigation button { background:#007BFF; color:#fff; border:none; padding:10px 20px; margin:0 10px; border-radius:5px; cursor:pointer; font-size:16px; }
-    .navigation button:hover { background:#0056b3; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Boole: Father of Boolean Logic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .presentation-container {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            height: 80vh;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            padding: 40px;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide.active {
+            display: flex;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .navigation button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .navigation button:hover {
+            background-color: #0056b3;
+        }
+        .resources {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .resources a {
+            display: block;
+            margin: 5px 0;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .resources a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <div class="presentation-container">
-    <div class="slide active">
-      <h1>George Boole: Father of Boolean Logic</h1>
-      <p>George Boole (1815–1864) was a mathematician and logician whose algebra laid the foundation for modern computing.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/George_Boole_color.jpg" alt="George Boole">
+
+<div class="presentation-container">
+    <div id="slide1" class="slide active">
+        <h1>George Boole: Father of Boolean Logic</h1>
+        <p>George Boole (1815–1864) was an English mathematician and logician whose work created the foundations of modern computer science and AI.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/George_Boole_color.jpg" alt="George Boole">
+        <div class="resources">
+            <a href="https://www.youtube.com/watch?v=evgHuE3tT6M" target="_blank">🎬 Watch: Introduction to George Boole</a>
+        </div>
     </div>
-    <div class="slide">
-      <h2>Early Life</h2>
-      <p>Boole was born in Lincoln, England. Largely self-taught, he showed talent in mathematics and languages before becoming a professor at Queen’s College, Cork.</p>
+    <div id="slide2" class="slide">
+        <h2>Early Life & Education</h2>
+        <p>Boole was born in Lincoln, England, in 1815. Despite limited formal schooling, he taught himself mathematics while working as a schoolteacher. His self-education and talent eventually earned him a position as the first professor of mathematics at Queen’s College, Cork, in Ireland.</p>
     </div>
-    <div class="slide">
-      <h2>Major Contributions</h2>
-      <p>His invention of Boolean algebra reduced logic to equations using values of 0 and 1, forming the basis for digital circuits.</p>
+    <div id="slide3" class="slide">
+        <h2>Major Contributions</h2>
+        <h3>Boolean Algebra</h3>
+        <p>Boole invented Boolean algebra, a system of logic that represents values as true or false (1 and 0). His 1854 work, "The Laws of Thought," laid the basis for symbolic logic and binary operations.</p>
+        <p>This breakthrough became fundamental to electrical engineering, programming, and data science.</p>
     </div>
-    <div class="slide">
-      <h2>Contributions to AI</h2>
-      <p>Boolean logic underpins rule-based systems, search engines, and AI decision-making processes that rely on true/false operations.</p>
+    <div id="slide4" class="slide">
+        <h2>Contributions to AI</h2>
+        <p>Boolean logic is at the heart of computer decision-making, search algorithms, and rule-based AI systems. Without his logical framework, modern AI’s ability to represent and evaluate conditions would not exist.</p>
     </div>
-    <div class="slide">
-      <h2>Legacy</h2>
-      <p>Every digital computer operates on Boolean principles. Without Boole, modern programming and AI systems would not exist.</p>
+    <div id="slide5" class="slide">
+        <h2>Legacy & Impact</h2>
+        <p>Today, every computer, smartphone, and AI model relies on Boolean logic to function. George Boole’s abstract ideas directly shaped the architecture of digital computers and remain fundamental to AI research and applications.</p>
     </div>
+
     <div class="navigation">
-      <button id="prevBtn" onclick="changeSlide(-1)">Previous</button>
-      <button id="nextBtn" onclick="changeSlide(1)">Next</button>
+        <button id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+        <button id="nextBtn" onclick="changeSlide(1)">Next</button>
     </div>
-  </div>
-  <script>
+</div>
+
+<script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
+
     function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      slides[index].classList.add('active');
-      document.getElementById('prevBtn').disabled = (index===0);
-      document.getElementById('nextBtn').disabled = (index===slides.length-1);
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+        document.getElementById('prevBtn').disabled = (index === 0);
+        document.getElementById('nextBtn').disabled = (index === slides.length - 1);
     }
+
     function changeSlide(direction) {
-      currentSlide += direction;
-      if(currentSlide<0) currentSlide=0;
-      if(currentSlide>=slides.length) currentSlide=slides.length-1;
-      showSlide(currentSlide);
+        currentSlide = currentSlide + direction;
+        if (currentSlide < 0) {
+            currentSlide = 0;
+        }
+        if (currentSlide >= slides.length) {
+            currentSlide = slides.length - 1;
+        }
+        showSlide(currentSlide);
     }
-    showSlide(currentSlide);
-  </script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        showSlide(currentSlide);
+    });
+</script>
+
 </body>
 </html>
+
 

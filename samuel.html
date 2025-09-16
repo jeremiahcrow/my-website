@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Samuel: Machine Learning Pioneer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .presentation-container {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            height: 80vh;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            padding: 40px;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide.active {
+            display: flex;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .navigation button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .navigation button:hover {
+            background-color: #0056b3;
+        }
+        .resources {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .resources a {
+            display: block;
+            margin: 5px 0;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .resources a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="presentation-container">
+    <div id="slide1" class="slide active">
+        <h1>Arthur Samuel: Father of Machine Learning</h1>
+        <p>Arthur Samuel was a pioneer in artificial intelligence, known for coining the term <strong>machine learning</strong> and creating one of the first self-learning programs.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Arthur_Samuel_AI.jpg" alt="Arthur Samuel">
+        <div class="resources">
+            <a href="https://www.youtube.com/watch?v=QOJ1diYDIyE" target="_blank">🎬 Watch: Arthur Samuel and Early Machine Learning</a>
+        </div>
+    </div>
+    <div id="slide2" class="slide">
+        <h2>Early Life & Education</h2>
+        <p>Born in 1901, Samuel studied electrical engineering at MIT. Later, he joined IBM where he began exploring computing and artificial intelligence.</p>
+        <p>His engineering background equipped him with the skills to develop innovative programs that could learn from experience.</p>
+    </div>
+    <div id="slide3" class="slide">
+        <h2>Major Contributions</h2>
+        <p>Samuel developed the first checkers-playing program that improved as it played more games, a groundbreaking achievement in adaptive algorithms.</p>
+        <p>He also coined the term <strong>machine learning</strong> in the 1950s, describing the process by which machines could improve performance without explicit programming.</p>
+    </div>
+    <div id="slide4" class="slide">
+        <h2>Contributions to Computing & AI Foundations</h2>
+        <p>Samuel’s checkers program became one of the earliest demonstrations that computers could learn from experience. His work inspired new approaches to AI.</p>
+        <div class="resources">
+            <a href="https://plato.stanford.edu/entries/ai-history/" target="_blank">📖 Read: History of AI</a>
+        </div>
+    </div>
+    <div id="slide5" class="slide">
+        <h2>Influence on Modern AI</h2>
+        <p>Samuel’s ideas are foundational to today’s reinforcement learning and data-driven AI. His vision paved the way for the adaptive algorithms that power modern applications like recommendation systems and autonomous agents.</p>
+    </div>
+
+    <div class="navigation">
+        <button id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+        <button id="nextBtn" onclick="changeSlide(1)">Next</button>
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+        document.getElementById('prevBtn').disabled = (index === 0);
+        document.getElementById('nextBtn').disabled = (index === slides.length - 1);
+    }
+
+    function changeSlide(direction) {
+        currentSlide = currentSlide + direction;
+        if (currentSlide < 0) {
+            currentSlide = 0;
+        }
+        if (currentSlide >= slides.length) {
+            currentSlide = slides.length - 1;
+        }
+        showSlide(currentSlide);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        showSlide(currentSlide);
+    });
+</script>
+
+</body>
+</html>
+

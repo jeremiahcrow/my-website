@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allen Newell: AI & Cognitive Science Pioneer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4;
+           display:flex; justify-content:center; align-items:center; height:100vh; }
+    .presentation-container { position:relative; width:80%; max-width:900px; height:80vh;
+           background:#fff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.1);
+           overflow:hidden; }
+    .slide { display:none; padding:40px; box-sizing:border-box; height:100%; width:100%;
+           flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+    .slide.active { display:flex; }
+    h1,h2,h3 { color:#333; } p { color:#666; line-height:1.6; }
+    img { max-width:80%; margin-top:20px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,.1);}
+    .navigation { position:absolute; bottom:20px; width:100%; text-align:center; }
+    .navigation button { background:#007BFF; color:white; border:none; padding:10px 20px;
+           margin:0 10px; border-radius:5px; cursor:pointer; font-size:16px;
+           transition:background-color .3s; }
+    .navigation button:hover { background:#0056b3; }
+    .resources { margin-top:20px; text-align:left; }
+    .resources a { display:block; margin:5px 0; color:#007BFF; text-decoration:none; font-size:14px; }
+    .resources a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+<div class="presentation-container">
+  <div class="slide active">
+    <h1>Allen Newell: AI & Cognitive Science Pioneer</h1>
+    <p>Allen Newell was a trailblazer in artificial intelligence and cognitive psychology, co-creating the <strong>General Problem Solver</strong> and advancing human-computer interaction.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/63/Allen_Newell.jpg" alt="Allen Newell">
+    <div class="resources">
+      <a href="https://plato.stanford.edu/entries/cognitive-science/" target="_blank">📖 Cognitive Science Overview</a>
+    </div>
+  </div>
+  <div class="slide">
+    <h2>Early Life & Education</h2>
+    <p>Born in 1927 in San Francisco, Newell studied at Stanford before joining RAND Corporation and later Carnegie Mellon University, where he shaped AI research.</p>
+  </div>
+  <div class="slide">
+    <h2>Major Contributions</h2>
+    <p>Newell co-developed the General Problem Solver and Soar cognitive architecture, pioneering symbolic AI and models of human reasoning.</p>
+  </div>
+  <div class="slide">
+    <h2>AI Foundations</h2>
+    <p>His work laid the groundwork for problem-solving algorithms, symbolic processing, and the integration of psychology with computer science.</p>
+  </div>
+  <div class="slide">
+    <h2>Influence on Modern AI</h2>
+    <p>Newell’s research influenced expert systems, machine reasoning, and the way AI models replicate aspects of human thought.</p>
+  </div>
+  <div class="navigation">
+    <button id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+    <button id="nextBtn" onclick="changeSlide(1)">Next</button>
+  </div>
+</div>
+<script>
+  let currentSlide=0; const slides=document.querySelectorAll('.slide');
+  function showSlide(i){ slides.forEach(s=>s.classList.remove('active'));
+    slides[i].classList.add('active');
+    document.getElementById('prevBtn').disabled=(i===0);
+    document.getElementById('nextBtn').disabled=(i===slides.length-1);}
+  function changeSlide(d){ currentSlide+=d;
+    if(currentSlide<0)currentSlide=0;
+    if(currentSlide>=slides.length)currentSlide=slides.length-1;
+    showSlide(currentSlide);}
+  document.addEventListener('DOMContentLoaded',()=>showSlide(currentSlide));
+</script>
+</body>
+</html>

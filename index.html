@@ -10,38 +10,40 @@
       background: #111;
       color: #fff;
     }
+
     h1 {
       text-align: center;
       padding: 20px;
       color: #00c2ff;
     }
+
     .scroll-container {
-      display: flex;
-      overflow-x: auto;
-      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
-      scroll-snap-type: x mandatory;
+      padding: 20px;
     }
+
     .card {
-      flex: 0 0 auto;
       background: #222;
       border-radius: 12px;
-      width: 250px;
       padding: 20px;
       text-align: center;
-      scroll-snap-align: center;
       transition: transform 0.3s, background 0.3s;
     }
+
     .card:hover {
       transform: scale(1.05);
       background: #333;
     }
+
     .card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
       border-radius: 10px;
     }
+
     .card a {
       text-decoration: none;
       color: #00c2ff;
@@ -49,13 +51,6 @@
       font-weight: bold;
       display: block;
       margin-top: 12px;
-    }
-    .scroll-container::-webkit-scrollbar {
-      display: none;
-    }
-    .scroll-container {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
     }
   </style>
 </head>
@@ -114,5 +109,6 @@
   </div>
 </body>
 </html>
+
 
 

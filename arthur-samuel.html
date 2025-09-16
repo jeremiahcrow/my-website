@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arthur Samuel: The Father of Machine Learning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .presentation-container {
+      position: relative;
+      width: 80%;
+      max-width: 900px;
+      height: 80vh;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      padding: 40px;
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .slide.active { display: flex; }
+    h1, h2, h3 { color: #333; }
+    p { color: #666; line-height: 1.6; }
+    img {
+      max-width: 80%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .navigation {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    .navigation button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .navigation button:hover { background-color: #0056b3; }
+    .resources {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .resources a {
+      display: block;
+      margin: 5px 0;
+      color: #007BFF;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .resources a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="presentation-container">
+  <div id="slide1" class="slide active">
+    <h1>Arthur Samuel: The Father of Machine Learning</h1>
+    <p>A computer scientist best known for coining the term "machine learning" and creating one of the first self-learning programs.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Arthur_Samuel.png" alt="Arthur Samuel">
+    <div class="resources">
+      <a href="https://www.youtube.com/watch?v=R9OHn5ZF4Uo" target="_blank">🎬 Watch: Introduction to Machine Learning</a>
+    </div>
+  </div>
+
+  <div id="slide2" class="slide">
+    <h2>Early Life</h2>
+    <p>Arthur Samuel was born in 1901 in Emporia, Kansas. He studied electrical engineering at MIT and later earned his master's at MIT as well.</p>
+    <p>His early interests in computing eventually led him to pioneering work in artificial intelligence at IBM.</p>
+  </div>
+
+  <div id="slide3" class="slide">
+    <h2>Major Contributions</h2>
+    <p>Samuel created a checkers-playing program in the 1950s that improved its performance through experience, a landmark in AI.</p>
+    <p>He coined the term "machine learning" to describe this process of programs improving with experience.</p>
+  </div>
+
+  <div id="slide4" class="slide">
+    <h2>Contributions to AI</h2>
+    <p>Samuel’s work laid the foundation for supervised learning and reinforcement learning.</p>
+    <p>His self-learning checkers program inspired decades of research into machine learning techniques.</p>
+  </div>
+
+  <div id="slide5" class="slide">
+    <h2>Influence on Modern AI</h2>
+    <p>Every machine learning algorithm today, from spam filters to self-driving cars, reflects Samuel’s vision.</p>
+    <p>He showed the world that computers could not only follow instructions but also learn from experience.</p>
+    <div class="resources">
+      <a href="https://en.wikipedia.org/wiki/Arthur_Samuel" target="_blank">📖 Read: Arthur Samuel Biography</a>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <button id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+    <button id="nextBtn" onclick="changeSlide(1)">Next</button>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+    document.getElementById('prevBtn').disabled = (index === 0);
+    document.getElementById('nextBtn').disabled = (index === slides.length - 1);
+  }
+
+  function changeSlide(direction) {
+    currentSlide += direction;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+    showSlide(currentSlide);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => showSlide(currentSlide));
+</script>
+
+</body>
+</html>

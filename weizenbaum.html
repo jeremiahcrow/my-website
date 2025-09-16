@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph Weizenbaum: Creator of ELIZA</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4;
+           display:flex; justify-content:center; align-items:center; height:100vh; }
+    .presentation-container { position:relative; width:80%; max-width:900px; height:80vh;
+           background:#fff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.1);
+           overflow:hidden; }
+    .slide { display:none; padding:40px; box-sizing:border-box; height:100%; width:100%;
+           flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+    .slide.active { display:flex; }
+    h1,h2,h3 { color:#333; } p { color:#666; line-height:1.6; }
+    img { max-width:80%; margin-top:20px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,.1);}
+    .navigation { position:absolute; bottom:20px; width:100%; text-align:center; }
+    .navigation button { background:#007BFF; color:white; border:none; padding:10px 20px;
+           margin:0 10px; border-radius:5px; cursor:pointer; font-size:16px;
+           transition:background-color .3s; }
+    .navigation button:hover { background:#0056b3; }
+    .resources { margin-top:20px; text-align:left; }
+    .resources a { display:block; margin:5px 0; color:#007BFF; text-decoration:none; font-size:14px; }
+    .resources a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+<div class="presentation-container">
+  <div class="slide active">
+    <h1>Joseph Weizenbaum: Creator of ELIZA</h1>
+    <p>Weizenbaum is best known for creating <strong>ELIZA</strong>, one of the first natural language processing programs, simulating conversation like a psychotherapist.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Joseph_Weizenbaum_2005.jpg" alt="Joseph Weizenbaum">
+    <div class="resources">
+      <a href="https://www.youtube.com/watch?v=6sKj8lH_T1Q" target="_blank">🎬 Watch: ELIZA Demo</a>
+    </div>
+  </div>
+  <div class="slide">
+    <h2>Early Life & Education</h2>
+    <p>Born in 1923 in Germany, Weizenbaum fled Nazi persecution and moved to the U.S. He studied mathematics and worked in early computing at Wayne State University and MIT.</p>
+  </div>
+  <div class="slide">
+    <h2>Major Contributions</h2>
+    <p>In 1966, Weizenbaum built ELIZA, which could mimic human conversation using pattern matching. The program shocked the world by showing how easily humans could bond with machines.</p>
+  </div>
+  <div class="slide">
+    <h2>AI Foundations</h2>
+    <p>ELIZA became one of the first chatbots, inspiring research into human-computer interaction and natural language processing.</p>
+    <div class="resources">
+      <a href="https://plato.stanford.edu/entries/ai-history/" target="_blank">📖 Read: History of AI</a>
+    </div>
+  </div>
+  <div class="slide">
+    <h2>Influence on Modern AI</h2>
+    <p>Modern conversational agents—like Siri, Alexa, and ChatGPT—trace their lineage to ELIZA, highlighting the role of language models in AI.</p>
+  </div>
+  <div class="navigation">
+    <button id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+    <button id="nextBtn" onclick="changeSlide(1)">Next</button>
+  </div>
+</div>
+<script>
+  let currentSlide=0; const slides=document.querySelectorAll('.slide');
+  function showSlide(i){ slides.forEach(s=>s.classList.remove('active'));
+    slides[i].classList.add('active');
+    document.getElementById('prevBtn').disabled=(i===0);
+    document.getElementById('nextBtn').disabled=(i===slides.length-1);}
+  function changeSlide(d){ currentSlide+=d;
+    if(currentSlide<0)currentSlide=0;
+    if(currentSlide>=slides.length)currentSlide=slides.length-1;
+    showSlide(currentSlide);}
+  document.addEventListener('DOMContentLoaded',()=>showSlide(currentSlide));
+</script>
+</body>
+</html>
+
